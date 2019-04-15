@@ -178,33 +178,33 @@ function getRandomId() {
 //     console.log(arrTodo);
 //
 // });
-activeElements.addEventListener('click', function () {
-    item();
-    for (let itemActive = 0; itemActive < arrTodo.length; itemActive++) {
-        const currentInput = mainList.children[itemActive].querySelector('input');
-        if(currentInput.checked){
-            currentInput.closest("li").remove();
-        }
-    }
-    counter();
-});
-
-completedElements.addEventListener('click', function () {
-    item();
-    for (let itemCompleted = 0; itemCompleted < arrTodo.length; itemCompleted++) {
-        const currentInput = mainList.children[itemCompleted].querySelector('input');
-
-        if(!currentInput.checked){
-            currentInput.closest("li").remove();
-        }
-    }
-    counter();
-});
-
-allElements.addEventListener('click', function () {
-    item();
-    counter();
-});
+// activeElements.addEventListener('click', function () {
+//     item();
+//     for (let itemActive = 0; itemActive < arrTodo.length; itemActive++) {
+//         const currentInput = mainList.children[itemActive].querySelector('input');
+//         if(currentInput.checked){
+//             currentInput.closest("li").remove();
+//         }
+//     }
+//     counter();
+// });
+//
+// completedElements.addEventListener('click', function () {
+//     item();
+//     for (let itemCompleted = 0; itemCompleted < arrTodo.length; itemCompleted++) {
+//         const currentInput = mainList.children[itemCompleted].querySelector('input');
+//
+//         if(!currentInput.checked){
+//             currentInput.closest("li").remove();
+//         }
+//     }
+//     counter();
+// });
+//
+// allElements.addEventListener('click', function () {
+//     item();
+//     counter();
+// });
 
 
 
