@@ -6,7 +6,7 @@ const allCheck = document.getElementById("allCheck");
 const allElements = document.getElementById("allElements");
 const activeElements = document.getElementById("activeElements");
 const completedElements = document.getElementById("completedElements");
-const arrTodo = JSON.parse(localStorage.todo);
+let arrTodo = [];
 let checkToggle;
 let todolist = [];
 let isCheckAllBtn;
@@ -15,6 +15,7 @@ let isCheckAllBtn;
 if (localStorage.getItem('todo') !== null) {
     todolist = JSON.parse(localStorage.getItem('todo'));
     isCheckAllBtn = JSON.parse(localStorage.getItem('allCheck'));
+    arrTodo = JSON.parse(localStorage.todo);
 
     item();
     addFooter();
@@ -143,68 +144,70 @@ function getRandomId() {
 
 
 
-// allCheck.addEventListener('click', function (e) {
-//     e.stopPropagation();
-//     let arrTodo = JSON.parse(localStorage.todo);
-//     //debugger;
-//
-//     if (e.target.checked) {
-//         console.log(e.target.checked);
-//
-//         arrTodo.map((item) => {
-//             item.check = true;
-//         });
-//
-//         for (let item of mainList.children) {
-//             const currentInput = item.querySelector('input');
-//             currentInput.checked = true;
-//         }
-//
-//     } else if (!e.target.checked) {
-//         console.log(e.target.checked);
-//         arrTodo.map((item) => {
-//             item.check = false;
-//         });
-//
-//         for (let item of mainList.children) {
-//             const currentInput = item.querySelector('input');
-//             currentInput.checked = false;
-//
-//         }
-//
-//     }
-//     localStorage.setItem('allCheck', JSON.stringify(e.target.checked));
-//     localStorage.setItem('todo', JSON.stringify(arrTodo));
-//     console.log(arrTodo);
-//
-// });
-// activeElements.addEventListener('click', function () {
-//     item();
-//     for (let itemActive = 0; itemActive < arrTodo.length; itemActive++) {
-//         const currentInput = mainList.children[itemActive].querySelector('input');
-//         if(currentInput.checked){
-//             currentInput.closest("li").remove();
-//         }
-//     }
-//     counter();
-// });
-//
-// completedElements.addEventListener('click', function () {
-//     item();
-//     for (let itemCompleted = 0; itemCompleted < arrTodo.length; itemCompleted++) {
-//         const currentInput = mainList.children[itemCompleted].querySelector('input');
-//
-//         if(!currentInput.checked){
-//             currentInput.closest("li").remove();
-//         }
-//     }
-//     counter();
-// });
-//
-// allElements.addEventListener('click', function () {
-//     item();
-//     counter();
-// });
+allCheck.addEventListener('click', function (e) {
+    e.stopPropagation();
+    let arrTodo = JSON.parse(localStorage.todo);
+    //debugger;
+
+    if (e.target.checked) {
+        console.log(e.target.checked);
+
+        arrTodo.map((item) => {
+            item.check = true;
+        });
+
+        for (let item of mainList.children) {
+            const currentInput = item.querySelector('input');
+            currentInput.checked = true;
+        }
+
+    } else if (!e.target.checked) {
+        console.log(e.target.checked);
+        arrTodo.map((item) => {
+            item.check = false;
+        });
+
+        for (let item of mainList.children) {
+            const currentInput = item.querySelector('input');
+            currentInput.checked = false;
+
+        }
+
+    }
+    localStorage.setItem('allCheck', JSON.stringify(e.target.checked));
+    localStorage.setItem('todo', JSON.stringify(arrTodo));
+    console.log(arrTodo);
+
+});
+
+activeElements.addEventListener('click', function () {
+    item();
+    for (let itemActive = 0; itemActive < arrTodo.length; itemActive++) {
+        console.log(arrTodo.length);
+        const currentInput = mainList.children[itemActive].querySelector('input');
+        if(currentInput.checked){
+            currentInput.closest("li").remove();
+        }
+    }
+    counter();
+});
+
+completedElements.addEventListener('click', function () {
+    item();
+    for (let itemCompleted = 0; itemCompleted < arrTodo.length; itemCompleted++) {
+        const currentInput = mainList.children[itemCompleted].querySelector('input');
+
+        if(!currentInput.checked){
+            currentInput.closest("li").remove();
+        }
+    }
+    counter();
+});
+
+allElements.addEventListener('click', function () {
+    item();
+    counter();
+});
 
 
 
