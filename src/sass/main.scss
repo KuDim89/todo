@@ -1,0 +1,18 @@
+// UTILS
+@import "reset";
+@import "mixins";
+
+// LIBS
+@import "libs/bootstrap-grid";
+
+// BASE
+@import "fonts";
+@import "base";
+
+// COMPONENTS
+@import "buttons";
+@import "header";
+@import "footer";
+
+//index
+@import "index/index";

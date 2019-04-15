@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo list</title>
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<article class="todo" id="todo">`
+    <h1 class="header__title">Todo list</h1>
+    <div class="todo-body" id="todoBody">
+        <header class="header" id="header">
+            <input class="header__input" id="headerInput" type="text" placeholder="What needs to be done?">
+        </header>
+        <section class="main">
+            <div class="main__check-all hidden" id="allCheckWrap">
+                <label>
+                    <input id="allCheck" type="checkbox">
+                    <span></span>
+                </label>
+                <!--<button id="allCheck" class="allCheck"></button>-->
+            </div>
+            <ul class="main__list" id="mainList"></ul>
+        </section>
+        <footer class="footer hidden" id="footer">
+            <div class="footer__count">
+                <i id="count"></i>
+                <span>items-left</span>
+            </div>
+            <ul class="footer__filter">
+                <li class="all" id="allElements">All</li>
+                <li class="active" id="activeElements">Active</li>
+                <li class="completed" id="completedElements">Completed</li>
+            </ul>
+            <button class="footer__clear" id="footerClear">Clear completed</button>
+        </footer>
+    </div>
+
+
+</article>
+
+</body>
+<script src="js/bundle.js"></script>
+
+</html>

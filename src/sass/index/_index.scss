@@ -1,0 +1,204 @@
+button {
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    outline: none;
+  }
+}
+.todo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 40rem;
+}
+
+.todo-body {
+  box-shadow: -2px 6px 50px -13px rgba(12,183,245,0.64);
+  transition: all .3s;
+  &:hover {
+    box-shadow: -2px 6px 96px -13px rgba(12,183,245,0.64);
+  }
+}
+
+.main{
+  position: relative;
+  font-size: 0;
+
+  &__check-all {
+    position: absolute;
+    content: "";
+    top: -3rem;
+    left: 1.5rem;
+    //top: -3.5rem;
+    //left: 1rem;
+    input  {
+      display: none;
+      &:checked+span:before {
+        content: "";
+        position: absolute;
+        color: #0a0a0a;
+        width: 18px;
+        height: 7px;
+        border: 2px solid black;
+        border-top: 0;
+        border-right: 0;
+        transform: rotate(-45deg);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+    button {
+      position: relative;
+      width: 35px;
+      height: 35px;
+      border: 1px solid black;
+      outline: none;
+      background: #ffffff;
+      box-shadow: 0 4px 4px -2px grey;
+      border-radius: 8px;
+      &:before {
+        content: "";
+        position: absolute;
+        color: #0a0a0a;
+        width: 18px;
+        height: 7px;
+        border: 2px solid red;
+        border-top: 0;
+        border-right: 0;
+        transform: rotate(-45deg);
+        transition: all .3s ease;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+      &:hover {
+        box-shadow: 0 4px 4px -2px green;
+      }
+      &:active {
+        box-shadow: 0 2px 2px -1px green;
+        border-color: green;
+        &:before {
+          border-color: green;
+        }
+      }
+
+    }
+    span {
+      position: absolute;
+      content: "";
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid grey;
+      transition: all .3s;
+      &:hover {
+        transform: scale(1.2);
+        border: 1px solid coral;
+      }
+    }
+  }
+  &__list {
+    width: 100%;
+    padding: 0;
+    li {
+      position: relative;
+      width: 100%;
+      box-shadow: 0 4px 4px -2px gray;
+      &:hover {
+        box-shadow: 0 4px 4px -2px green;
+      }
+      .toggle {
+        position: absolute;
+        content: "";
+        bottom: 2.4rem;
+        left: 1.5rem;
+        input  {
+          display: none;
+          //&[checked = "true"]+span:before {
+          &:checked+span:before {
+            content: "";
+            position: absolute;
+            color: #0a0a0a;
+            width: 18px;
+            height: 7px;
+            border: 2px solid black;
+            border-top: 0;
+            border-right: 0;
+            transform: rotate(-45deg);
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+          }
+        }
+        span {
+          position: absolute;
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          border: 1px solid grey;
+          transition: all .3s;
+          &:hover {
+            transform: scale(1.2);
+            border: 1px solid green;
+          }
+        }
+      }
+      .text  {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100%;
+        color: black;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        padding: 1rem 4rem;
+        box-sizing: border-box;
+      }
+      .close {
+        position: absolute;
+        content: "";
+        background: none;
+        border: none;
+        bottom: 1rem;
+        right: 1.5rem;
+        padding: 1rem;
+        outline: none;
+        transition: all .3s;
+        &:after,
+        &:before {
+          position: absolute;
+          content: "";
+          width: 2px;
+          height: 15px;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          margin: auto;
+          background-color: red;
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+        &:before {
+          transform: rotate(-45deg);
+        }
+        &:hover {
+          transform: scale(1.5);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+

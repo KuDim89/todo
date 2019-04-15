@@ -1,0 +1,24 @@
+.header{
+  &__title {
+    font-size: 5rem;
+    margin: 2rem 0;
+    color: coral;
+    text-align: center;
+  }
+  &__input {
+    position: relative;
+    width: 100%;
+    font-size: 1.8rem;
+    margin: 0 auto;
+    //padding: 1.5rem 4rem 1.5rem 6rem;
+    padding: 1.5rem 4rem;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 0 4px 4px -2px gray;
+    transition: all .3s;
+    outline: none;
+    &:hover {
+      box-shadow: 0 4px 4px -2px coral;
+    }
+  }
+}
